@@ -1,0 +1,22 @@
+[package]
+name = "libmprompt"
+version = "0.1.0"
+authors = ["schrodingerzhu <i@zhuyi.fan>"]
+edition = "2018"
+license = "MIT"
+description = "rust bindings of libmprompt."
+keywords = ["mprompt", "koka"]
+categories = ["api-bindings"]
+homepage = "https://github.com/koka-lang/libmprompt"
+repository = "https://github.com/SchrodingerZhu/libmprompt"
+readme = "README.md"
+
+[workspace]
+members = ["libmprompt-sys"]
+
+[dependencies]
+libmprompt-sys = { version = "0.1.0", path = "libmprompt-sys", default-features = false }
+
+[features]
+plain-c = ["libmprompt-sys/plain-c"]
+debug = ["libmprompt-sys/debug"]
